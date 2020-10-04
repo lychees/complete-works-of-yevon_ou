@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!-- saved from url=(0261)https://mp.weixin.qq.com/mp/newappmsgvote?action=show&__biz=MzAxNTMxMTc0MA==&supervoteid=489170165&uin=777&key=777&pass_ticket=&wxtoken=777&mid=2651019834&idx=1&appmsg_token=1035_pS5nN3dJNZnyw%2BtJ2P_-KAlmw1yCMjtSsfUeBqygr9LMca3MeyvsLHbkRWoQmUCP76lrS0EcjCLC_8UZ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico">
+<link rel="mask-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/MjliNWVm.svg" color="#4C4C4C">
+<link rel="apple-touch-icon-precomposed" href="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png">
+
+        <title></title>
+        
+<link rel="stylesheet" href="./page_mp_vote42f400.css">
+<link rel="stylesheet" href="./page_mp_vote_new45f902.css">
+
+    </head>
+    <body class="zh_CN " ontouchstart="">
+        
+<script id="t_votes" type="text/html">
+    {if (del_flag==0)}
+    <div class="vote_form_inner {if has_vote}has_vote{/if} {if (is_expired||!is_login)}expired{/if}">
+        {if (!is_login)}
+        <p class="vote_error_tips">
+            <img src="http://mmbiz.qpic.cn/mmbiz/a5icZrUmbV8qLa7aVNndUPfGbulEZzxnibJIenSIdYk1faoKobuK70I9wWEXnGQjicG7L2LibJQCAPwMPP0IAvtY6g/0" alt="">很抱歉，请在手机微信登录投票        </p>
+		{else if (is_expired)}
+		<div class=" vote_frm_top">
+			<p class="vote_tips">投票已过期</p>
+		</div>
+		{/if}
+
+        {each vote_subject as item idx}
+		<div class="vote_form_ele{if idx+1==vote_count} vote_form_ele_last{/if}"  id="img-content">
+			<h3 class="vote_title">{if vote_count>1}{idx+1}.{/if}{item.title}{if item.type==1}（单选）{else}（多选）{/if}</h3>
+
+			<ul class="vote_option_list ">
+				{each item.options as subitem subidx}
+				<li class="vote_option">
+
+					<input class="{if item.type==1}frm_radio{else}frm_checkbox{/if} js_vote" type="{if item.type==1}radio{else}checkbox{/if}" id="vote_{idx}_{subidx}" name="vote_{idx}" value="{subidx}" {if (has_vote || !is_login || is_expired )}disabled="disabled"{/if}>
+
+					<label for="vote_{idx}_{subidx}" onclick="" class="{if item.type==1}frm_radio_label{else}frm_checkbox_label{/if} vote_option_title group">
+						{if subitem.url}
+						<div class="img_container img_container_label">
+							<span class="img_panel">
+                            {if subitem.url.indexOf("http://mmsns.qpic.cn")>-1}
+                            <img class="preview" src="{urlRewrite subitem.url 0}"/></span>
+                            {else}
+                            <img class="preview" src="{urlRewrite subitem.url 300}"/></span>
+                            {/if}
+						</div>
+                        {/if}
+                        <span class="frm_option_word">{subitem.name} {if subitem.selected}(已选){/if}</span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">{subitem.cnt}票</span>
+						<span class="vote_result_meta tips vote_percent">{if item.total_cnt>0}{toFixed subitem.cnt*100/item.total_cnt}{else}0{/if}%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:{if item.total_cnt>0}{toFixed subitem.cnt*100/item.total_cnt}{else}0{/if}%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					{if subitem.url}
+					<div class="img_container img_container_btm">
+						<span class="img_panel"><img class="preview" src="{urlRewrite subitem.url 300}"/></span>
+					</div>
+					{/if}
+				</li>
+				{/each}
+			</ul>
+		</div>
+        {/each}
+
+			{if (!is_expired&&is_login)}
+                {if !has_vote}
+				<div class="vote_tool_area vote_tool_area_btn">
+					<button id="js_btn" type="submit" class="btn btn_inline btn_primary btn_disabled">投票</button>
+				</div>
+                {else}
+				<div class="vote_tool_area">
+					<p class="vote_tips">你已投票</p>
+				</div>
+                {/if}
+            {/if}
+
+    </div>
+    {/if}
+</script>
+<div id="js_form" action="javascript:return false;" class="vote_box form vote_form ">
+    <div class="vote_form_inner  expired">
+        
+		<div class=" vote_frm_top">
+			<p class="vote_tips">投票已过期</p>
+		</div>
+		
+
+        
+		<div class="vote_form_ele vote_form_ele_last" id="img-content">
+			<h3 class="vote_title">  3000W净资产，相亲晚餐（人均）花多少合适（单选）</h3>
+
+			<ul class="vote_option_list ">
+				
+				<li class="vote_option">
+
+					<input class="frm_radio js_vote" type="radio" id="vote_0_0" name="vote_0" value="0" disabled="disabled">
+
+					<label for="vote_0_0" onclick="" class="frm_radio_label vote_option_title group">
+						
+                        <span class="frm_option_word">20000元 </span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">529票</span>
+						<span class="vote_result_meta tips vote_percent">1%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:1%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					
+				</li>
+				
+				<li class="vote_option">
+
+					<input class="frm_radio js_vote" type="radio" id="vote_0_1" name="vote_0" value="1" disabled="disabled">
+
+					<label for="vote_0_1" onclick="" class="frm_radio_label vote_option_title group">
+						
+                        <span class="frm_option_word">6000 </span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">765票</span>
+						<span class="vote_result_meta tips vote_percent">2%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:2%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					
+				</li>
+				
+				<li class="vote_option">
+
+					<input class="frm_radio js_vote" type="radio" id="vote_0_2" name="vote_0" value="2" disabled="disabled">
+
+					<label for="vote_0_2" onclick="" class="frm_radio_label vote_option_title group">
+						
+                        <span class="frm_option_word">2000 </span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">4460票</span>
+						<span class="vote_result_meta tips vote_percent">15%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:15%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					
+				</li>
+				
+				<li class="vote_option">
+
+					<input class="frm_radio js_vote" type="radio" id="vote_0_3" name="vote_0" value="3" disabled="disabled">
+
+					<label for="vote_0_3" onclick="" class="frm_radio_label vote_option_title group">
+						
+                        <span class="frm_option_word">600 </span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">12143票</span>
+						<span class="vote_result_meta tips vote_percent">42%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:42%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					
+				</li>
+				
+				<li class="vote_option">
+
+					<input class="frm_radio js_vote" type="radio" id="vote_0_4" name="vote_0" value="4" disabled="disabled">
+
+					<label for="vote_0_4" onclick="" class="frm_radio_label vote_option_title group">
+						
+                        <span class="frm_option_word">200 </span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">9246票</span>
+						<span class="vote_result_meta tips vote_percent">32%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:32%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					
+				</li>
+				
+				<li class="vote_option">
+
+					<input class="frm_radio js_vote" type="radio" id="vote_0_5" name="vote_0" value="5" disabled="disabled">
+
+					<label for="vote_0_5" onclick="" class="frm_radio_label vote_option_title group">
+						
+                        <span class="frm_option_word">其他 </span>
+					</label>
+
+					<div class="vote_result">
+						<span class="vote_result_meta tips vote_number">1233票</span>
+						<span class="vote_result_meta tips vote_percent">4%</span>
+						<div class="vote_result_meta vote_graph">
+							<span style="width:4%;background-color:#7DADE1" class="vote_progress"></span>
+						</div>
+					</div>
+
+					
+				</li>
+				
+			</ul>
+		</div>
+        
+
+			
+
+    </div>
+    </div>
+
+<script type="text/javascript">
+var PAGE_MID='mmbizwap:vote/mp_vote_multiple.html';
+</script>
+        <script nonce="">
+    var __DEBUGINFO = {
+        debug_js : "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/debug/console42f400.js",
+        safe_js : "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/safe/moonsafe42f400.js",
+        res_list: []
+    };
+</script>
+
+<script nonce="" type="text/javascript">
+(function() {
+	var totalCount = 0,
+			finishCount = 0;
+
+	function _loadVConsolePlugin() {
+		window.vConsole = new window.VConsole();
+		while (window.vConsolePlugins.length > 0) {
+			var p = window.vConsolePlugins.shift();
+			window.vConsole.addPlugin(p);
+		}
+	}
+	
+	function _addVConsole(uri, cb) {
+		totalCount++;
+		var node = document.createElement('SCRIPT');
+		node.type = 'text/javascript';
+		node.src = uri;
+		node.setAttribute('nonce', '');
+		if (cb) {
+			node.onload = cb;
+		}
+		document.getElementsByTagName('head')[0].appendChild(node);
+	}
+	if (
+		(document.cookie && document.cookie.indexOf('vconsole_open=1') > -1)
+		|| location.href.indexOf('vconsole=1') > -1
+	) {
+		window.vConsolePlugins = [];
+		_addVConsole('//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.2.2/vconsole.min440203.js', function() {
+			
+			_addVConsole('//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/plugin/vconsole-mpopt/1.0.1/vconsole-mpopt42f400.js', _loadVConsolePlugin);
+		});
+	}
+
+  
+  try {
+    var adIframeUrl = localStorage.getItem('__WXLS_ad_iframe_url');
+    if (window === top) {
+      if (adIframeUrl) {
+        if (navigator.userAgent.indexOf('iPhone') > -1) {
+          var img = new Image();
+          img.src = adIframeUrl;
+        } else {
+          var link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = adIframeUrl;
+          document.getElementsByTagName('head')[0].appendChild(link);
+        }
+      }
+    }
+  } catch (err) {
+
+  }
+
+})();
+</script>
+        
+<script type="text/javascript" src="./zepto42f400.js.下载"></script>
+<script type="text/javascript" src="./template42f400.js.下载"></script>
+<script type="text/javascript">
+    
+    if (typeof window.Ajax != 'function') {
+        window.Ajax = Zepto.ajax;
+    }
+</script>
+<script type="text/javascript">
+    
+    (function () {
+        var w;
+        var WeixinJSBridge;
+        if (top != window) {
+            w = top.window;
+        } else {
+            w = window;
+        }
+        try { 
+            WeixinJSBridge = w.WeixinJSBridge;
+        } catch (e) { }
+
+        var imgsSrc = [];
+        function reviewImage(src) {
+            if (typeof WeixinJSBridge != 'undefined') {
+                WeixinJSBridge.invoke('imagePreview', {
+                    'current': src,
+                    'urls': imgsSrc
+                });
+            }
+        }
+
+        
+        
+        
+        function onImgLoad() {
+            var imgs = document.getElementsByTagName("img") || [];
+            for (var i = 0, l = imgs.length; i < l; i = i + 2) {
+                var img = imgs.item(i);
+                var src = img.getAttribute('data-src') || img.getAttribute('src');
+                if (src) {
+                    if (src.indexOf("http://mmbiz.qpic.cn") == 0) {
+                        src = src.replace(/\/300$/, "/0");
+                        src = src.replace(/\/300\?/, "/0?");
+                    }
+                    imgsSrc.push(src);
+                    (function (src) {
+                        if (img.addEventListener) {
+                            img.addEventListener('click', function () {
+                                reviewImage(src);
+                            }, false);
+                        } else if (img.attachEvent) {
+                            img.attachEvent('click', function () {
+                                reviewImage(src);
+                            }, false);
+                        }
+                    })(src);
+                }
+            }
+        }
+        if (window.addEventListener) {
+            window.addEventListener('load', onImgLoad, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('load', onImgLoad);
+            window.attachEvent('onload', onImgLoad);
+        }
+    })();
+</script>
+<script type="text/javascript">
+    
+    var biz = "MzAxNTMxMTc0MA==";
+    var appmsg_token = "1035_pS5nN3dJNZnyw+tJ2P_-KAlmw1yCMjtSsfUeBqygr9LMca3MeyvsLHbkRWoQmUCP76lrS0EcjCLC_8UZ";
+    if (!!appmsg_token) {
+        (new Image()).src = location.protocol + "//mp.weixin.qq.com/mp/jsmonitor?idkey=68064_9_1&r=" + Math.random();
+    } else {
+        (new Image()).src = location.protocol + "//mp.weixin.qq.com/mp/jsmonitor?idkey=68064_10_1&r=" + Math.random();
+    }
+
+    var par = window.parent;
+
+    
+    
+    
+    
+    
+
+    
+    function doLog(method, msg) {
+
+        var w;
+        var WeixinJSBridge;
+        var doc = {};
+        if (top != window) {
+            w = top.window;
+        } else {
+            w = window;
+        }
+        try { 
+            WeixinJSBridge = w.WeixinJSBridge;
+            doc = w.document;
+        } catch (e) { }
+
+        
+        if (!!method && !!WeixinJSBridge && !!WeixinJSBridge.invoke) {
+            
+            WeixinJSBridge.invoke(method, {
+                "level": 'info',
+                "msg": "[WechatFe] " + msg
+            });
+        } else {
+            
+            setTimeout(function () {
+                if (doc.addEventListener) {
+                    doc.addEventListener('WeixinJSBridgeReady', function () {
+                        doLog(method, msg);
+                    }, false);
+                } else if (doc.attachEvent) {
+                    doc.attachEvent('WeixinJSBridgeReady', function () {
+                        doLog(method, msg);
+                    });
+                    doc.attachEvent('onWeixinJSBridgeReady', function () {
+                        doLog(method, msg);
+                    });
+                }
+            }, 0)
+        }
+    }
+    function logClientLog(msg) {
+        try {
+            var method;
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                method = 'writeLog';
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+                method = 'log';
+            }
+            if (!!method)
+                doLog(method, msg);
+        } catch (e) {
+            console.error(e);
+            throw e;
+        }
+    }
+    template.helper("urlRewrite", function (url, num) {
+        
+        
+        
+        return url.replace(/\/0$/, '/' + num + '?wxfrom=101').replace(/\/0\?/, '/' + num + '?wxfrom=101&');
+    });
+    template.helper("toFixed", function (num) {
+        num = num.toString();
+        var idx = num.indexOf('.');
+        if (idx == -1) {
+            return num;
+        }
+        return num.substr(0, idx); 
+    });
+    function domload() {
+        var Z = Zepto;
+        function afterVote() {
+            if (ret !== '0') {
+                return;
+            }
+            Z("#js_form").html(template.render("t_votes", voteInfo));
+            par.iframe_reload && par.iframe_reload();
+        }
+        afterVote();
+        logClientLog('[Vote] render ok');
+        Z(".js_vote").change(function () {
+            if (Z(".js_vote:checked").length > 0) {
+                Z("#js_btn").removeClass("btn_disabled");
+            }
+            else {
+                Z("#js_btn").addClass("btn_disabled");
+            }
+        });
+
+        var has_click_vote = false;
+        Z("#js_btn").click(function () {
+            if (!voteInfo.is_login || has_click_vote) {
+                return false;
+            }
+            logClientLog('[Vote] click vote');
+            var values = [];
+            
+            var len = subject.length;
+            for (var i = 0; i < len; i++) {
+                var temp = [], eles = $('input[name=vote_' + i + ']:checked');
+
+                if (eles.length > 0) {
+                    $('input[name=vote_' + i + ']:checked').each(function (index, ele) {
+                        temp.push(ele.value);
+                    })
+                    values.push({
+                        vote_id: subject[i].vote_id,
+                        item_idx_list: {
+                            item_idx: temp
+                        }
+                    })
+                } else {
+                    alert('请先完成所有问题');
+                    return false;
+                }
+
+            };
+            
+            has_click_vote = true;
+            var _idx = '1',
+                _mid = '2651019834',
+                _wxtoken = '777',
+                _reprint_ticket = '',
+                _source_mid = '',
+                _source_idx = '',
+                _data = {
+                    action: 'vote',
+                    __biz: 'MzAxNTMxMTc0MA==',
+                    uin: '777',
+                    key: '777',
+                    pass_ticket: '',
+                    appmsg_token: '1035_pS5nN3dJNZnyw+tJ2P_-KAlmw1yCMjtSsfUeBqygr9LMca3MeyvsLHbkRWoQmUCP76lrS0EcjCLC_8UZ',
+                    f: 'json',
+                    json: JSON.stringify({
+                        "super_vote_item": values,
+                        "super_vote_id": voteInfo.super_vote_id
+                    })
+                };
+            _idx && (_data["idx"] = _idx);
+            _mid && (_data["mid"] = _mid);
+            _wxtoken && (_data["wxtoken"] = _wxtoken);
+            _reprint_ticket && (_data["reprint_ticket"] = _reprint_ticket);
+            _source_mid && (_data["source_mid"] = _source_mid);
+            _source_idx && (_data["source_idx"] = _source_idx);
+            if (!!_data.appmsg_token) {
+                (new Image()).src = location.protocol + "//mp.weixin.qq.com/mp/jsmonitor?idkey=68064_11_1&r=" + Math.random();
+            } else {
+                (new Image()).src = location.protocol + "//mp.weixin.qq.com/mp/jsmonitor?idkey=68064_12_1&r=" + Math.random();
+            }
+            window.Ajax({
+                url: '/mp/newappmsgvote',
+                data: _data,
+                dataType: 'json',
+                type: 'post',
+                success: function (res) {
+                    window.top.console.log('vote', res);
+                    res.base_resp && logClientLog('[Vote] ajax res' + res.base_resp.ret);
+                    if (res.base_resp && res.base_resp.ret == 0) {
+                        
+                        for (var i = 0; i < subject.length; i++) {
+
+                            for (var j = 0; j < subject[i].options.length; j++) {
+                                if ($('input[name=vote_' + i + ']').eq(j).is(':checked')) {
+                                    subject[i].options[j].selected = true;
+                                    subject[i].options[j].cnt++;
+                                    subject[i].total_cnt++;
+                                }
+                            };
+                        };
+                        voteInfo.has_vote = 1;
+                        has_click_vote = false;
+                        afterVote();
+                    } else if (res.base_resp && res.base_resp.ret == -7) {
+                        has_click_vote = false;
+                        alert('关注公众号后才可以投票');
+                    } else if (res.base_resp && res.base_resp.ret == -6) {
+                        has_click_vote = false;
+                        alert('投票过于频繁，请稍后重试！');
+                    } else if (res.base_resp && res.base_resp.ret == 166001) {
+                        alert('投票已过期！');
+                    } else if (res.base_resp && res.base_resp.ret == 166002) {
+                        alert('投票已删除！');
+                    } else {
+                        has_click_vote = false;
+                        alert('投票失败，请稍后重试!');
+                    }
+                },
+                error: function () {
+                    has_click_vote = false;
+                    alert('投票失败，请稍后重试!');
+                }
+            });
+        });
+    }
+    function getParam(key, s) {
+        var s = s || location.href;
+        var key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); 
+        var match = s.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+        return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+    }
+    var voteInfo = {"del_flag":0,"expire_time":1551888030,"super_vote_id":489170165,"title":"3000W相亲投票","total_person":28376,"vote_permission":1,"vote_subject":[{"options":[{"cnt":529,"name":"20000元","selected":false},{"cnt":765,"name":"6000","selected":false},{"cnt":4460,"name":"2000","selected":false},{"cnt":12143,"name":"600","selected":false},{"cnt":9246,"name":"200","selected":false},{"cnt":1233,"name":"其他","selected":false}],"title":"  3000W净资产，相亲晚餐（人均）花多少合适","total_cnt":28376,"type":1,"vote_id":489170166}]};
+    var ret = '0';
+    var pass_ticket = "";
+    if (ret !== '0') {
+        alert('参数错误');
+    }
+    else {
+        if (voteInfo) {
+            
+            var expire_time = voteInfo.expire_time ? voteInfo.expire_time * 1000 : 0;
+            voteInfo.is_expired = (expire_time - (+new Date())) > 0 ? 0 : 1;
+            
+            var subject = voteInfo.vote_subject;
+            voteInfo.vote_count = subject ? subject.length : 0;
+            var option = subject[0]['options'], s_len = option.length;
+            var has_vote = false;
+            for (var i = 0; i < s_len; i++) {
+                if (option[i].selected == true) {
+                    has_vote = true;
+                }
+            }
+            voteInfo.has_vote = has_vote;
+            
+            voteInfo.is_login = 0 ? 0 : 1;
+            
+            
+            
+            
+            
+            
+            voteInfo.super_vote_id = voteInfo.super_vote_id ? voteInfo.super_vote_id : getParam('supervoteid');
+
+            
+            !!domload && (domload());
+            domload = null;
+        }
+    }
+</script>
+
+    
+
+<!--tailTrap<body></body><head></head><html></html>-->
+</body></html>

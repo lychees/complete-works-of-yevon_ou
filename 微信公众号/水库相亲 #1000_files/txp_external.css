@@ -1,0 +1,33 @@
+.txp_search{z-index:7;position:absolute;top:10px;right:0;width:auto;height:28px;padding-right:2px;border:1px solid #fff;border:1px solid rgba(255,255,255,.1);border-radius:14px 0 0 14px;background:#000;background:rgba(0,0,0,.3);font-size:0;white-space:nowrap;cursor:pointer}
+.txp_search .txp_icon{width:24px;height:24px;margin:2px}
+.txp_search_icon{display:inline-block}
+.txp_search_input{-webkit-transition:width .3s;display:inline-block;position:relative;width:0;overflow:hidden;vertical-align:top;transition:width .3s}
+.txp_search_input input{display:block;width:166px;height:28px;padding-left:12px;border:0;outline:0;background:0 0;color:#fff;font-size:12px;line-height:28px}
+.txp_search_input input::-webkit-input-placeholder{color:#fff;color:rgba(255,255,255,.7)}
+.txp_search_input input::-moz-placeholder{color:#fff;color:rgba(255,255,255,.7)}
+.txp_search_input input:-ms-input-placeholder{color:#fff;color:rgba(255,255,255,.7)}
+.txp_search_input input::-ms-input-placeholder{color:#fff;color:rgba(255,255,255,.7)}
+.txp_search_input input::placeholder{color:#fff;color:rgba(255,255,255,.7)}
+.txp_search_input:after{display:block;position:absolute;top:4px;right:0;width:2px;height:19px;background-color:#fff;background-color:rgba(255,255,255,.1);content:""}
+.txp_search:hover .txp_icon{fill:#ff6e0b}
+.txp_search:hover .txp_search_input{display:inline-block;width:166px}
+.txp_tipbar{position:relative;width:100%;height:50px;overflow:hidden;background:#f7f7f7;color:#2a2a2a;font-size:0;line-height:1.5}
+.txp_tipbar .txp_logo{display:block;position:absolute;top:10px;left:14px;width:30px;height:30px;margin-right:12px;background:url(/tencentvideo/txp/style/img/logo.svg)}
+.txp_tipbar .txp_label{display:inline-block;width:36px;height:16px;margin-left:6px;border:1px solid #ff5c38;border-radius:16px;background:#ff5c38;background:rgba(255,92,56,.1);color:#ff5c38;font-size:10px;line-height:16px;text-align:center;vertical-align:top}
+.txp_tipbar .txp_text{box-sizing:border-box;display:block;position:relative;max-width:100%;margin-top:8px;padding:0 190px 0 52px;overflow:hidden;font-size:12px;font-weight:700;text-overflow:ellipsis;white-space:nowrap}
+.txp_tipbar .txp_tip{display:block;max-width:100%;padding:0 190px 0 52px;overflow:hidden;font-size:12px;text-overflow:ellipsis;white-space:nowrap}
+.txp_tipbar .txp_btn_normal{position:absolute;top:10px;right:10px}
+.txp_btn_normal{display:inline-block;height:30px;padding:0 22px;border-radius:15px;background:#ff6428;background:-ms-linear-gradient(0deg,#fc6526 0,#fc5245 100%);color:#fff;font-size:14px;line-height:30px;text-align:center;cursor:pointer}
+.txp_btn_normal:hover{background:#ff6428}
+.player_inframe{-webkit-flex-direction:column;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;display:-webkit-flex;display:-ms-flexbox;display:-webkit-box;display:flex;position:relative;flex-direction:column}
+.player_inframe .mod_player{-webkit-flex:1;-webkit-box-flex:1;-ms-flex:1;-ms-flexbox:1;-webkit-align-items:center;-ms-flex-align:center;-webkit-box-align:center;-webkit-justify-content:center;-ms-flex-pack:center;-webkit-box-pack:center;-webkit-flex-direction:column;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;display:-webkit-flex;display:-ms-flexbox;display:-webkit-box;display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;background:#000}
+.txp_player_inframe{-webkit-flex-direction:column;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;display:-webkit-flex;display:-ms-flexbox;display:-webkit-box;display:flex;position:relative;flex-direction:column;width:100%;height:100%;font-family:PingFangSC-Regular,Helvetica Neue,Helvetica,Roboto,Microsoft Yahei,Arial,sans-serif}
+.txp_player_inframe .txp_player{-webkit-flex:1;-webkit-box-flex:1;-ms-flex:1;-ms-flexbox:1;-webkit-align-items:center;-ms-flex-align:center;-webkit-box-align:center;-webkit-justify-content:center;-ms-flex-pack:center;-webkit-box-pack:center;-webkit-flex-direction:column;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;display:-webkit-flex;display:-ms-flexbox;display:-webkit-box;display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;background:#000}
+.txp_controls .txp_btn_download{-webkit-flex-direction:row;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;margin-left:15px}
+.txp_controls .txp_btn_download .txp_label,.txp_controls .txp_btn_download .txp_label:hover{padding:0 2px;background:0 0}
+.txp_controls .txp_btn_download .txp_icon_download{display:inline-block;width:16px;height:16px}
+.txp_controls .txp_btn_download .txp_tooltip_download{top:-50px;padding:0 20px;border-radius:18px;background-color:#ff6413;color:#fff;font-size:14px;line-height:36px;white-space:nowrap}
+.txp_controls .txp_btn_download .txp_tooltip_download:after{position:absolute;bottom:-12px;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:#ff6413;content:""}
+.txp_controls .txp_btn_download:hover .txp_label{color:#ff6413}
+.txp_player_mini .txp_controls .txp_btn_download{display:none}
+#faycheng{content:"20190708111714"}
